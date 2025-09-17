@@ -16,26 +16,22 @@
                 <p class="price">$<?php echo number_format($product->price, 2); ?></p>
             </div>
            <div class="card-footer bg-white">
-    <div class="d-flex justify-content-between align-items-center">
-        <a href="<?php echo site_url('shop/product/' . $product->id); ?>" class="btn btn-outline-primary">View Details</a>
-        
-        <?php if (!empty($product->whatsapp_catalog_id)): ?>
-            <div class="btn-group">
-                <a href="https://wa.me/<?php echo $whatsapp_number; ?>?text=Hi,%20I'm%20interested%20in%20<?php echo urlencode($product->name); ?>%20(Product ID: <?php echo $product->whatsapp_catalog_id; ?>)" 
-                   class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="Inquire on WhatsApp">
-                    <i class="fab fa-whatsapp"></i> Inquire
-                </a>
-                <a href="whatsapp://send?text=Check out this <?php echo urlencode($product->name); ?> at <?php echo urlencode(site_url('shop/product/' . $product->id)); ?>" 
-                   class="btn btn-outline-success" data-bs-toggle="tooltip" title="Share via WhatsApp">
-                    <i class="fas fa-share"></i>
-                </a>
+             <div class="d-flex justify-content-between">
+                        <a href="<?php echo site_url('shop/product/' . $product->id); ?>" class="btn btn-outline-primary">View Details</a>
+                        <?php if (!empty($product->whatsapp_catalog_id)): ?>
+                        <a href="https://wa.me/9750719814?text=Hi,%20I'm%20interested%20in%20<?php echo urlencode($product->name); ?>%20(Product ID: <?php echo $product->whatsapp_catalog_id; ?>)" 
+                        class="btn btn-success" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquire
+                        </a>
+                        
+                            <?php else: ?>
+                            <span class="text-muted">Not on WhatsApp yet</span>
+                            <?php endif; ?>
+              </div>
             </div>
-        <?php else: ?>
-            <span class="text-muted small">Not on WhatsApp yet</span>
-        <?php endif; ?>
-    </div>
-</div>
         </div>
     </div>
     <?php endforeach; ?>
 </div>
+
+jhkjhjkh
